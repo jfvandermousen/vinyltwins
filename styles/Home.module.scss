@@ -1,24 +1,28 @@
 @import "mixins";
 
 $color-primary: blueviolet;	
+$mainColor:#DBBE2C;
+
+
+
 
 
 .gridHome {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-gap: 15px;
 
-    
 }
 .flipcard{
     background-color: transparent;
-    width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
+    width: 200px;
+    min-height: 200px;
+    border: 1px solid #f1f1f1;
     border: 1px solid #f1f1f1;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  }
+  margin:  0 10px;
+}
   /* This container is needed to position the front and back side */
 .flipInner {
     position: relative;
@@ -42,12 +46,36 @@ $color-primary: blueviolet;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
   }
+
+  .cardback  {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    padding: 8%;
+    text-align: left;
+    h3 {
+      padding-bottom: 4px;
+      border-bottom: 3px solid white;
+      margin-bottom: 6px;
+    }
+      p {
+        position: absolute;
+        right: 20px;
+        bottom: 10px;
+        font-weight: bold;
+    }
+
+  }
+
 .vignette {
-    max-width: 100%;
+  max-width: 100%;
   height: auto;
   object-fit: cover;
 }
+
 /* Style the front side (fallback if image is missing) */
+
 .cardfront {
     background-color: #bbb;
     color: black;
@@ -55,7 +83,34 @@ $color-primary: blueviolet;
   
   /* Style the back side */
   .cardback {
-    background-color: dodgerblue;
+    background-color: $mainColor;
     color: white;
     transform: rotateY(180deg);
+  }
+
+  .category {
+
+    width: 100%;
+    margin-top: 2em;
+    padding:0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    button {
+      background-color: $mainColor;
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+      padding:1em ;
+      border: none;
+      margin: 10px;
+      flex-grow: 1;
+
+      &:hover {
+        background-color: white;
+        color:  $mainColor;
+      }
+    }
   }

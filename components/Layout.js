@@ -7,7 +7,7 @@ export default function Layout({children}) {
         <div className={styles.container}>
             <Navigation />
             <main>{children}</main>
-            <footer>@Jf Vandermousen</footer>
+            <footer className={styles.footer}>@Jf Vandermousen</footer>
         </div>
     )
 }

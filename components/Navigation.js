@@ -8,9 +8,9 @@ export default function Navigation() {
     return (
         <div>
             <div className={styles.topNav}>
-                <FontAwesomeIcon icon={faBars} size="3x" />
-                <h1>VinylTwins</h1>
-                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                <FontAwesomeIcon icon={faBars} size="2x" className={styles.icon}  />
+                <h1>Vinyl Twins</h1>
+                <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.searchIcon} />
             </div>
             <div>
                 <input className={styles.searchBar}  type="text"  placeholder="SEARCH" />

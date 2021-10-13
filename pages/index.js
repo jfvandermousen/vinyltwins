@@ -9,6 +9,9 @@ export default function Home() {
     <>
         <Head>
         <title>VinylTwins - records</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;400;600;800;900&display=swap" rel="stylesheet"/> 
       </Head>
     <Layout >
       <div>
@@ -21,7 +24,9 @@ export default function Home() {
               <img src={product.image} className={styles.vignette} />
             </div>
             <div className={styles.cardback}>
-              <h2>{product.name}</h2>
+              <h3>{product.name}</h3>
+              <strong>{product.artist}</strong>
+              <p>{product.price}€</p>
             </div>
           </div>
         </div>
@@ -30,6 +35,17 @@ export default function Home() {
         ))}
         
       </div>
+      </div>
+      <div className={styles.category}>
+        <button>ROCK</button>
+        <button>ELECTRO</button>
+        <button>RAP</button>
+        <button>CLASSIC</button>
+        <button>JAZZ</button>
+        <button>POP</button>
+        <button>AMBIENT</button>
+        <button>REGGAE</button>
+
       </div>
 
     </Layout>
