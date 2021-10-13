@@ -45,6 +45,7 @@ export default function Home() {
         <button>POP</button>
         <button>AMBIENT</button>
         <button>REGGAE</button>
+        <button>BLUES</button>
 
       </div>
 

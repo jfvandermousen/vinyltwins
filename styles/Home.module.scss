@@ -111,6 +111,8 @@ $mainColor:#DBBE2C;
       &:hover {
         background-color: white;
         color:  $mainColor;
+        transform: scale(1.25);
+        transition: all ease 1000ms;
       }
     }
   }
