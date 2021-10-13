@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
 import styles from '../styles/Home.module.scss'
-import {products} from '../utils/data'
+import data from '../utils/data';
+import Link from 'next/link'  
 
 
 export default function Home() {
@@ -17,7 +18,8 @@ export default function Home() {
       <div>
     <h1>VINYLS HALL</h1>
         <div className={styles.gridHome}>
-            {products.map((product,id) => (
+            {data.products.map((product,id) => (
+              <Link href={`/product/${product.slug}`} passHref>
           <div className={styles.flipcard} key={id}>
           <div className={styles.flipInner}>
             <div className={styles.cardfront}>
@@ -30,6 +32,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </Link>
 
 
         ))}
