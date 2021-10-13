@@ -1,0 +1,22 @@
+$mainColor:#DBBE2C;
+
+.topNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+    h1 {
+        color:black ;
+    }
+}
+.searchBar {
+    width: 100%;
+    border-top: 4px solid $mainColor;
+    border-bottom: 4px solid $mainColor;
+    font-size: 2.5rem;
+    color: $mainColor;
+    padding: 0.5em;
+    margin-bottom: 25px;
+    border-left: none;
+    border-right: none;
+}
