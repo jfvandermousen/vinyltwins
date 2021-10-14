@@ -3,9 +3,14 @@ import Layout from '../components/Layout'
 import styles from '../styles/Home.module.scss'
 import data from '../utils/data';
 import Link from 'next/link'  
+import db from '../utils/db';
+import Product from '../models/Product';
 
 
-export default function Home() {
+export default function Home(props) {
+
+  const {products} = props;
+
   return (
     <>
         <Head>
@@ -18,9 +23,9 @@ export default function Home() {
       <div>
     <h1>VINYLS HALL</h1>
         <div className={styles.gridHome}>
-            {data.products.map((product,id) => (
+            {products.map((product) => (
               <Link href={`/product/${product.slug}`} passHref>
-          <div className={styles.flipcard} key={id}>
+          <div className={styles.flipcard} key={product.name}>
           <div className={styles.flipInner}>
             <div className={styles.cardfront}>
               <img src={product.image} className={styles.vignette} />
@@ -56,4 +61,15 @@ export default function Home() {
     </>
 
   )
+}
+
+export async function getServerSideProps() {
+  await db.connect();
+  const products = await Product.find({}).lean();
+  await db.disconnect();
+  return {
+    props: {
+      products,
+    }, // will be passed to the page component as props
+  };
 }
