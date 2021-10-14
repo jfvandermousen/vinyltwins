@@ -26,7 +26,7 @@ export default function Home() {
               <img src={product.image} className={styles.vignette} />
             </div>
             <div className={styles.cardback}>
-              <h3>{product.name}</h3>
+              <h2>{product.name}</h2>
               <strong>{product.artist}</strong>
               <p>{product.price}€</p>
             </div>

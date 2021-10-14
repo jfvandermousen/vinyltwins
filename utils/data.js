@@ -33,7 +33,7 @@ const data = {
             description:'Selected Ambient Works 85-92, est le premier album d Aphex Twin, sorti en 1992. Cet album est une compilation de morceaux qui auraient été composés par James entre 1985 et 1992.'
         },{
             id: 4,
-            slug:'dark-side',
+            slug:'african-electronic-music',
             name:"African Electronic Music",
             artist:"Francis Bebey",
             label:"No Label",
@@ -43,7 +43,7 @@ const data = {
             description:'Inspired by his father electronic organ, Bebey experimented with its sounds and pre-programmed drum patterns, releasing several rare, electronics-based albums'
         },{
             id: 5,
-            slug:'dark-side',
+            slug:'dark-side-two',
             name:"Fifty Years",
             artist:"Rolling Stones",
             label:"Detroit Records",
@@ -53,7 +53,7 @@ const data = {
             description:'Popular rock band'
         },{
             id: 6,
-            slug:'dark-side',
+            slug:'push-the-button',
             name:"Push the Button",
             artist:"The Chemical Brothers",
             label:"東芝EMI 株式会社",

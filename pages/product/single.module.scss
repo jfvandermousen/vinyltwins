@@ -1,0 +1,87 @@
+$color-primary: blueviolet;	
+$mainColor:#DBBE2C;
+
+
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.leftpanel {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-basis:  20%;
+
+    h3 {
+        font-weight: 100;
+        margin-top: 25px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid $mainColor ;
+    }
+
+    button {
+        background-color: $mainColor;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        padding:1em ;
+        border: none;
+        margin: 10px;
+        flex-grow: 1;
+    
+        &:hover {
+          background-color: white;
+          color:  $mainColor;
+          transform: scale(1.25);
+          transition: all ease 1000ms;
+        }
+      }
+}
+
+
+.main {
+    flex-basis:  80%;
+    padding-top: 2em;
+
+    img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        margin-right: 1em;
+    }
+}
+
+.product {
+    display: flex;
+
+    button {
+        background-color: $mainColor;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        padding:1em ;
+        border: none;
+        margin: 10px;
+        flex-grow: 1;
+    
+        &:hover {
+          background-color: white;
+          color:  $mainColor;
+          transform: scale(1.25);
+          transition: all ease 1000ms;
+        }
+      }
+    
+}
+
+.catLabel {
+    display: flex;
+    justify-content: space-between;
+    
+}
