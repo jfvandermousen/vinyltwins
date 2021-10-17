@@ -1,16 +1,19 @@
 
 import React from 'react';
 import { useRouter } from 'next/router';
-import data from '../../utils/data';
 import Layout from '../../components/Layout';
 import styles from'./single.module.scss'
+// import data from '../../utils/data'
+import { connectToDatabase } from "../../util/mongodb";
 
-export default function ProductScreen() {
+
+
+export default function ProductScreen({products}) {
+
   const router = useRouter();
   const { slug } = router.query;
-
   // search for each element the corresponding slug
-  const product = data.products.find((e) => e.slug === slug);
+  const product = products.find((e) => e.slug === slug);
   if (!product) {
     return <div>Product Not Found</div>;
   }
@@ -65,4 +68,18 @@ export default function ProductScreen() {
       </Layout>
     </div>
   );
+}
+export async function getServerSideProps() {
+  const { db } = await connectToDatabase();
+  const products = await db 
+    .collection("products")
+    .find({})
+    .sort({ metacritic: -1 })
+    .limit(20)
+    .toArray();
+  return {
+    props: {
+      products: JSON.parse(JSON.stringify(products)),
+    },
+  };
 }

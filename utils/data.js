@@ -43,10 +43,10 @@ const data = {
             description:'Inspired by his father electronic organ, Bebey experimented with its sounds and pre-programmed drum patterns, releasing several rare, electronics-based albums'
         },{
             id: 5,
-            slug:'dark-side-two',
-            name:"Fifty Years",
-            artist:"Rolling Stones",
-            label:"Detroit Records",
+            slug:'il-ballo-della-Vita',
+            name:"Il Ballo Della Vita",
+            artist:"Maneskin",
+            label:"Sony",
             category:"Rock",
             price:26,
             image:'../images/he-rolling-stones.jpg',

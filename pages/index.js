@@ -1,15 +1,14 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
 import styles from '../styles/Home.module.scss'
-import data from '../utils/data';
-import Link from 'next/link'  
-import db from '../utils/db';
-import Product from '../models/Product';
+import Link from 'next/link';  
+import { connectToDatabase } from "../util/mongodb";
 
 
-export default function Home(props) {
 
-  const {products} = props;
+export default function Home({products}) {
+
+
 
   return (
     <>
@@ -24,8 +23,8 @@ export default function Home(props) {
     <h1>VINYLS HALL</h1>
         <div className={styles.gridHome}>
             {products.map((product) => (
-              <Link href={`/product/${product.slug}`} passHref>
-          <div className={styles.flipcard} key={product.name}>
+              <Link href={`/product/`+ product.slug} key={product.slug}>
+          <div className={styles.flipcard} >
           <div className={styles.flipInner}>
             <div className={styles.cardfront}>
               <img src={product.image} className={styles.vignette} />
@@ -64,12 +63,16 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps() {
-  await db.connect();
-  const products = await Product.find({}).lean();
-  await db.disconnect();
+  const { db } = await connectToDatabase();
+  const products = await db
+    .collection("products")
+    .find({})
+    .sort({ metacritic: -1 })
+    .limit(20)
+    .toArray();
   return {
     props: {
-      products,
-    }, // will be passed to the page component as props
+      products: JSON.parse(JSON.stringify(products)),
+    },
   };
 }
