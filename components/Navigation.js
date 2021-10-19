@@ -5,14 +5,17 @@ import styles from'./nav.module.scss'
 import React from 'react'
 import Link from 'next/link'
 
+
+
 export default function Navigation() {
     return (
         <div>
             <div className={styles.topNav}>
+
                 <FontAwesomeIcon icon={faBars} size="2x" className={styles.icon}  />
                 
                 <Link href="/">
-                <h1>Vinyl Twins</h1>
+                    <h1 className={styles.title}>Vinyl Tricks</h1>
                 </Link>
                 <FontAwesomeIcon icon={faCartShopping}className={styles.searchIcon} />
             </div>
