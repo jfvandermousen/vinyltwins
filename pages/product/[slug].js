@@ -6,6 +6,7 @@ import styles from'./single.module.scss'
 import AudioPlayer from 'react-h5-audio-player';
 
 
+
 import { connectToDatabase } from "../../util/mongodb";
 
 
@@ -24,9 +25,9 @@ export default function ProductScreen({products}) {
         <Layout >
           <div className={styles.container}>
 
-              <aside className={styles.leftpanel}>
+              <aside className={styles.leftpanel} >
 
-                <h3>Style</h3>
+                {/* <h3>Style</h3> */}
                 
                     <button>ROCK</button>
                     <button>ELECTRO</button>
@@ -43,11 +44,19 @@ export default function ProductScreen({products}) {
                   <main className={styles.main}>
 
                     <div className={styles.product}>
-
+                      <div className="cover-player">
                         <img src={product.image} />
+                        <AudioPlayer className={styles.audio}
+                          autoPlay
+                          src=""
+                          onPlay={e => console.log("onPlay")}
+                    
+                      />
+                      </div>
+                        
 
 
-                      <div>
+                      <div className={styles.infos}>
                         <h1>{product.name}</h1>
                         <b>{product.artist}</b>
                         <p>{product.description}</p>
@@ -56,13 +65,8 @@ export default function ProductScreen({products}) {
                             <b>{product.label}</b>
                             <b>{product.category}</b>
                         </div>
-                        <AudioPlayer className={styles.audio}
-                          autoPlay
-                          src=""
-                          onPlay={e => console.log("onPlay")}
-                    
-                      />
-                        <button>ADD TO CART</button>
+
+                        <button className={styles.addBtn}>ADD TO CART</button>
                       </div>
 
                       

@@ -2,21 +2,22 @@ $color-primary: blueviolet;
 $mainColor:#DBBE2C;
 
 
-
 .container {
     width: 100%;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 }
 
 .leftpanel {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-basis:  20%;
+    
+
 
     h3 {
         font-weight: 100;
@@ -46,8 +47,9 @@ $mainColor:#DBBE2C;
 
 
 .main {
-    flex-basis:  80%;
+    // flex-basis:  80%;
     padding-top: 2em;
+    margin-bottom:2em;
 
     img {
         width: 300px;
@@ -60,7 +62,12 @@ $mainColor:#DBBE2C;
 .product {
     display: flex;
 
-    button {
+    img {
+        margin-bottom:1em;
+    }
+
+
+    .addBtn {
         background-color: $mainColor;
         color: white;
         font-size: 20px;
@@ -84,4 +91,14 @@ $mainColor:#DBBE2C;
     display: flex;
     justify-content: space-between;
     
+}
+
+.cover-player {
+    display: flex;
+    flex-direction: column;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
 }

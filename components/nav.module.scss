@@ -1,5 +1,7 @@
 $mainColor:#DBBE2C;
 
+
+
 .topNav {
     display: flex;
     justify-content: space-between;
@@ -8,12 +10,17 @@ $mainColor:#DBBE2C;
 
     h1 {
         color:#11001c;
+        font-family: 'Pacifico';
+        font-size: 3rem;
         font-weight: 800;
         letter-spacing: 2px;
         cursor: pointer;
-
-    }
+        text-align: center;
+        line-height: 1.5em;
 }
+}
+
+
 .searchBar {
     width: 100%;
     border-top: 3px solid $mainColor;
@@ -43,3 +50,5 @@ $mainColor:#DBBE2C;
     width: 30px;
     height: auto;
 }
+
+

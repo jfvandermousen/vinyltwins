@@ -6,6 +6,7 @@ import { connectToDatabase } from "../util/mongodb";
 
 
 
+
 export default function Home({products}) {
 
 
@@ -13,7 +14,7 @@ export default function Home({products}) {
   return (
     <>
         <Head>
-        <title>VinylTwins - records</title>
+        <title>Vinyl Tricks - records</title>
         <link rel="preconnect" href="https://fonts.googleapis.com"/> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;400;600;800;900&display=swap" rel="stylesheet"/> 
