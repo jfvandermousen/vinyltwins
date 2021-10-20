@@ -48,7 +48,7 @@ $mainColor:#DBBE2C;
 
 .main {
     // flex-basis:  80%;
-    padding-top: 2em;
+    padding:20px;
     margin-bottom:2em;
 
     img {
@@ -72,9 +72,9 @@ $mainColor:#DBBE2C;
         color: white;
         font-size: 20px;
         font-weight: 600;
-        padding:1em ;
+        max-height: 88px;
         border: none;
-        margin: 10px;
+        margin-top: 10px;
         flex-grow: 1;
     
         &:hover {
@@ -101,4 +101,8 @@ $mainColor:#DBBE2C;
 .infos{
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+}
+.audio {
+max-width: 300px;
 }
