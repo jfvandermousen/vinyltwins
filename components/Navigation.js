@@ -4,6 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from'./nav.module.scss'
 import React from 'react'
 import Link from 'next/link'
+import Menu from './Sidebar'
+
+
+
+
 
 
 
@@ -12,10 +17,13 @@ export default function Navigation() {
         <div>
             <div className={styles.topNav}>
 
-                <FontAwesomeIcon icon={faBars} size="2x" className={styles.icon}  />
+                {/* <FontAwesomeIcon icon={faBars} size="2x" className={styles.icon}  /> */}
+                <Menu />
                 
                 <Link href="/">
+                    
                     <h1 className={styles.title}>Vinyl Tricks</h1>
+
                 </Link>
                 <FontAwesomeIcon icon={faCartShopping}className={styles.searchIcon} />
             </div>

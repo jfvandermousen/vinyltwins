@@ -3,6 +3,8 @@ import Layout from '../components/Layout'
 import styles from '../styles/Home.module.scss'
 import Link from 'next/link';  
 import { connectToDatabase } from "../util/mongodb";
+import Sidebar from '../components/Sidebar';
+import 'animate.css';
 
 
 
@@ -15,13 +17,19 @@ export default function Home({products}) {
     <>
         <Head>
         <title>Vinyl Tricks - records</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com"/> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;400;600;800;900&display=swap" rel="stylesheet"/> 
       </Head>
     <Layout >
       <div>
-    <h1>VINYLS HALL</h1>
+      
+ 
+<h1 className="animate__animated animate__bounce">VINYLS HALL</h1>
+ 
+
+    
         <div className={styles.gridHome}>
             {products.map((product) => (
               <Link href={`/product/`+ product.slug} key={product.slug}>
@@ -58,6 +66,7 @@ export default function Home({products}) {
       </div>
 
     </Layout>
+
     </>
 
   )

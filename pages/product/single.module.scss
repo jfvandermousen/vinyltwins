@@ -5,7 +5,7 @@ $mainColor:#DBBE2C;
 .container {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap-reverse;
 }
@@ -55,7 +55,7 @@ $mainColor:#DBBE2C;
         width: 300px;
         height: 300px;
         object-fit: cover;
-        margin-right: 1em;
+        margin-right: 2.5em;
     }
 }
 
@@ -72,7 +72,7 @@ $mainColor:#DBBE2C;
         color: white;
         font-size: 20px;
         font-weight: 600;
-        max-height: 88px;
+        max-height: 60px;
         border: none;
         margin-top: 10px;
         flex-grow: 1;
@@ -101,8 +101,19 @@ $mainColor:#DBBE2C;
 .infos{
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
+    height: 300px;
+    min-width: 300px;
+
+
+    h1 {
+        margin-top: 0px !important;
+    }
+
+        
+   
 }
 .audio {
 max-width: 300px;
 }
+

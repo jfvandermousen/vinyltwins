@@ -48,7 +48,7 @@ export default function ProductScreen({products}) {
                         <img src={product.image} />
                         <AudioPlayer className={styles.audio}
                           autoPlay
-                          src=""
+                          src={product.song}
                           onPlay={e => console.log("onPlay")}
                     
                       />
